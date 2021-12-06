@@ -12,7 +12,7 @@ def greet_user2(username):
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 #How to use Python in the command console
 # 1. cd + Paste the folder's direction: 
-# C:\Users\David Ordoñez\Desktop\CodingPrograms\Python Crash Course
+# C:\Users\David Ordoñez\Desktop\Software Pillar\CodingPrograms\Python Crash Course
 # 2. Name the project + .py: PCC.py
 # 3. Clean the console: cls
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -324,3 +324,148 @@ def requestedPizza():
     if 'extra cheese' in requested_toppings:
         print("Adding extra cheese.")
     print("\nFinished making your pizza!")
+
+#Exercises 5.3 - 5.7
+def alienColors1(): 
+    global alienColor
+    alienColor = 'red'
+    if alienColor == 'green': print("You've earned 5 points!")
+    
+def alienColors2(): 
+    if alienColor == 'green': print("You've earned 5 points!")
+    elif alienColor != 'green': print("You've earned 1' points!")
+    
+def alienColors3(): 
+    alienColor = 'red'
+    if alienColor == 'green': print("You've earned 5 points!")
+    if alienColor == 'yellow': print("You've earned 10 points!")
+    if alienColor == 'red': print("You've earned 15 points!")
+#alienColors3()
+
+def stagesOfLife(): 
+    age = 18
+    if age < 2: print("You're a baby")
+    elif age >= 2 and age < 4: print("You're a toddler")
+    elif age >= 4 and age < 13: print("You're a kid")
+    elif age >= 13 and age < 20: print("You're a teenager")
+    elif age >= 20 and age < 65: print("You're an adult")
+    elif age >= 65: print("You're an elder")
+#stagesOfLife()
+
+def favoriteFruit(): 
+    myFavoriteFruits = ['Pineapple', 'Grapes', 'Sugar Cane', 'Tamarindo']
+    if 'Sugar Cane' in myFavoriteFruits: print("You really love Sugar Cane!")
+#favoriteFruit()    
+    
+#Exercises 5.8 - 5.11
+def helloAdmin():
+    print("Hello Admin")
+    userNames = ['Admin', 'Carlos', 'Luca', 'Susana', 'Viviana']
+    i = 1
+    while i <= 2: 
+        if userNames: 
+            for user in userNames:
+                if user == 'Admin': print("Hello Admin, would you like to see a status report?")
+                else: print(f"Hello; {user}")
+        else: print("List is empty. We need to find some users!")
+        
+        userNames = []
+        i+=1
+#helloAdmin()
+
+def checkingUsernames(): 
+    currentUsers = ["David", "Marco", "Luca", "Sandra", "Liliana"]
+    newUsers = ["Daniel", "Luca", "María", "Vivina", "Sandy"]
+    
+    for user in newUsers: 
+        if user in currentUsers: 
+            print("You need to enter a new Usernames, " + user)
+        else: 
+            print("The username is avaliable")
+#checkingUsernames()
+
+def ordinalNumbers(): 
+    numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    for number in numbers: 
+        if number == 1 or number == 2 or number == 3: 
+            print()
+        else: print(f"{number}th")
+
+
+
+
+
+#6. Dictionaries
+def example(): 
+    alien = {
+        'color': 'blue', #Key-value pairs
+        'points': 5
+    }
+    print(alien['color'])
+    print(alien['points'])
+    
+    #To insert values: 
+    alien['xPosition'] = 0
+    alien['yPosition'] = 25
+    
+    print(alien)
+
+#Using If statements and dictionaries
+def ifDictionaries(): 
+    #By changing one value in the alien's dictionary, 
+    # you can change the overall behavior of the alien. 
+    alien = {
+        'xPosition': 1, 
+        'yPosition': 25,
+        'speed': 'medium'
+    }
+    
+    if alien['speed'] == 'slow': xIncrement = 1
+    elif alien['speed'] == 'medium': xIncrement = 2
+    else: xIncrement = 3
+    
+    alien['xPosition'] += xIncrement
+    
+#Removing Key-Value pairs    
+def remKeyValue(): 
+    alien = {
+        'color': 'blue',
+        'points': 5
+    }
+    del alien['points'] #Deleted permanently
+    
+#Formating Dictionaries
+def favLang(): 
+    favorite_languages = {
+        'jen': 'python',
+        'sarah': 'c',
+        'edward': 'ruby',
+        'phil': 'python',
+        }
+    
+    print("Sarah's favorite language is " + 
+          favorite_languages['sarah'].title() + 
+          ".")
+    
+#Exercises 6.1 - 6.3
+def person(): 
+    Daniell = {
+        'name': 'Daniell',
+        'Last name': 'Saavedra',
+        'city': 'Cali'
+    }
+    print(Daniell)
+person()
+
+def favoriteNumbers(): 
+    favNumbers = {
+        'Daniell': 3, 
+        'Marcus': 4, 
+        'Luisa': 9, 
+        'George': 2, 
+        'Maria': 5
+    }
+    print(favNumbers)
+    for k, v in favNumbers.items(): 
+        print(k, v)
+favoriteNumbers()
